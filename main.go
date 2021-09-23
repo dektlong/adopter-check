@@ -18,7 +18,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "</H2>")
 	
-	fmt.Fprintf("My name is: ", os.Getenv("REV"))
+	fmt.Fprintf(w, os.Getenv("REV"))
 }
 
 func main() {
