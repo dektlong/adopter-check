@@ -1,3 +1,3 @@
-# hello-world
+# Adopter Check 
 
-nothing to see here
+A simple go function that executes adopter-check brownfield apis
