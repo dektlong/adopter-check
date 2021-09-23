@@ -10,7 +10,7 @@ import (
 var addr = flag.String("addr", ":8080", "addr to bind to")
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	log.Println(r.RemoteAddr, r.Method, r.URL.String())
+	fmt.Println(r.RemoteAddr, r.Method, r.URL.String())
 
 	fmt.Fprintf(w, "dekt is running adopter-check\n")
 }
