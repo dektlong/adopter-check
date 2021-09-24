@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"os"
 	"io/ioutil"
-	"strings"
 )
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
-var apiCall string
+
+var API_CALL="CHANGE-ME"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -22,18 +22,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "</H1>")
 	
 	fmt.Fprintf(w, "<H3>")
-	fmt.Fprintf(w, "Please provide a valid 'brownfield API' for execution")
-	
-	log.Println(r.RemoteAddr, r.Method, r.URL.String())
-	
-	apiCall = strings.Replace(r.URL.String(), "api=", "", 1)
-	
-	fmt.Fprintf(w, "<H3>")
 	fmt.Fprintf(w, "Executing the following brownfield API: ")
-	fmt.Fprintf(w, apiCall)
+	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "\n")
 	
-	req, _ := http.NewRequest("GET", apiCall, nil)
+	req, _ := http.NewRequest("GET", API_CALL, nil)
 	res, _ := http.DefaultClient.Do(req)
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
