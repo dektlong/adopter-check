@@ -14,7 +14,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<h1 style="color:blue;">
+	fmt.Fprintf(w, "<h1 style='color:blue;'>"
 	fmt.Fprintf(w, "Welcome to the Adopter Check function")
 	fmt.Fprintf(w, "</h1>")
 		    
