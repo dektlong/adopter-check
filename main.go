@@ -3,25 +3,22 @@ package main
 import (
 	"flag"
 	"fmt"
-	"os"
+	"log"
 	"net/http"
 )
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<H2>")
-	
-	fmt.Fprintf(w, r.URL.String())
+	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 
-	fmt.Fprintf(w, "dekt is running adopter-check\n")
-	
-	fmt.Fprintf(w, "</H2>")
-	
-	fmt.Fprintf(w, os.Getenv("REV"))
+	fmt.Fprintf(w, "hello dekt\n")
+	fmt.Fprintf(w, r.URL.String())
 }
 
 func main() {
 	http.HandleFunc("/", handler)
 
+	log.Printf("listening on %s", *addr)
+	log.Fatal(http.ListenAndServe(*addr, nil))
 }
