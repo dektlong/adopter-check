@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-var API_CALL="NONE"
+var API_CALL="datacheck.tanzu.dekt.io/api/adoption-history?adopterID=609-99-9999"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -16,13 +16,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<H1>Welcome to the Adopter Check function</H1>")
 	
-	fmt.Fprintf(w, "<H3>Brownfield API set for execution: ")
+	fmt.Fprintf(w, "<H2>Brownfield API set for execution: ")
 	fmt.Fprintf(w, API_CALL)
-	fmt.Fprintf(w, "</H3>")
+	fmt.Fprintf(w, "</H2>")
 	
-	fmt.Fprintf(w, "<H5>Function revision: ")
+	fmt.Fprintf(w, "<H3>Function revision: ")
 	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "</H5>")
+	fmt.Fprintf(w, "</H3>")
 }
 
 func main() {
