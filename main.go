@@ -50,7 +50,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	
-	http.HandleFunc("/", roothandler)
+	http.HandleFunc("/", handler)
 
 	log.Printf("listening on %s", *addr)
 	log.Fatal(http.ListenAndServe(*addr, nil))
