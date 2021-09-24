@@ -18,9 +18,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	
-	
-	
 	apiCall = strings.ReplaceAll(r.URL.String(), "/api=", "")
 
 	fmt.Fprintf(w, "<H1>")
