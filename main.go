@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"io/ioutil"
 )
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
