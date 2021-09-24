@@ -22,7 +22,7 @@ func roothandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Welcome to the Adopter Check function")
 	fmt.Fprintf(w, "</H1>")
 	
-	mt.Fprintf(w, "<H3>")
+	fmt.Fprintf(w, "<H3>")
 	fmt.Fprintf(w, "Please provide a valid 'brownfield API' for execution")
 	
 }
@@ -47,7 +47,7 @@ func apihandler(w http.ResponseWriter, r *http.Request) {
 	defer res.Body.Close()
 	body, _ := ioutil.ReadAll(res.Body)
 	fmt.Fprintf(w, string(body))
-    	}
+    	
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "\n")
