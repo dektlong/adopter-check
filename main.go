@@ -10,7 +10,7 @@ import (
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
 
-var API_CALL="CHANGE-ME"
+var API_CALL="datacheck.tanzu.dekt.io/api/adoption-history?adopterID=609-99-9999"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
