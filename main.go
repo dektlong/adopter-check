@@ -10,28 +10,21 @@ import (
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
 
-var API_CALL="datacheck.tanzu.dekt.io/api/adoption-history?adopterID=609-99-9999"
+var API_CALL="NONE"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1>")
-	fmt.Fprintf(w, "Welcome to the Adopter Check function")
-	fmt.Fprintf(w, "</H1>")
+	fmt.Fprintf(w, "<H2>Welcome to the Adopter Check function</H2>")
 	
-	fmt.Fprintf(w, "<H3>")
-	fmt.Fprintf(w, "Executing the following brownfield API: ")
+	fmt.Fprintf(w, "<big>Brownfield API set for execution: ")
 	fmt.Fprintf(w, API_CALL)
-	fmt.Fprintf(w, "\n")
+	fmt.Fprintf(w, "</big>\n")
 	
-	fmt.Fprintf(w, "</H3>")
-	
-	fmt.Fprintf(w, "\n")
-	fmt.Fprintf(w, "\n")
-	fmt.Fprintf(w, "<H4>")
+	fmt.Fprintf(w, "<i>Function revision: ")
 	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "</H4>")
+	fmt.Fprintf(w, "</i>")
 }
 
 func main() {
