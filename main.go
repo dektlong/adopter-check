@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
@@ -14,6 +15,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "hello dekt\n")
 	fmt.Fprintf(w, r.URL.String())
+	fmt.Fprintf(w, os.Getenv("VAR"))
 }
 
 func main() {
