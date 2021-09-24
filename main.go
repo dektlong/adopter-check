@@ -7,13 +7,14 @@ import (
 	"net/http"
 	"os"
 	"io/ioutil"
+	"strings"
 )
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
 var apiCall string
 var res string
 
-func roothandler(w http.ResponseWriter, r *http.Request) {
+func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
@@ -24,17 +25,9 @@ func roothandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<H3>")
 	fmt.Fprintf(w, "Please provide a valid 'brownfield API' for execution")
 	
-}
-
-func apihandler(w http.ResponseWriter, r *http.Request) {
-	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1>")
-	fmt.Fprintf(w, "Welcome to the Adopter Check function")
-	fmt.Fprintf(w, "</H1>")
-	
-	apiCall = r.URL.String()
+	apiCall = strings.Replace(r.URL.String(), "api=", "")
 	
 	fmt.Fprintf(w, "<H3>")
 	fmt.Fprintf(w, "Executing the following brownfield API: ")
