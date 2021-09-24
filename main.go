@@ -12,7 +12,6 @@ import (
 
 var addr = flag.String("addr", ":8080", "addr to bind to")
 var apiCall string
-var res string
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -27,7 +26,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	apiCall = strings.Replace(r.URL.String(), "api=", "")
+	apiCall = strings.Replace(r.URL.String(), "api=", "", 1)
 	
 	fmt.Fprintf(w, "<H3>")
 	fmt.Fprintf(w, "Executing the following brownfield API: ")
