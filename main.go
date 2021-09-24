@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-var API_CALL="NONE"
+var API_CALL="datacheck.tanzu.dekt.io/api/adoption-history?adopterID=909-99-9999"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
