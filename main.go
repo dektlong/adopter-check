@@ -16,9 +16,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<p color='blue'>")
 	fmt.Fprintf(w, "Welcome to the Adopter Check function")
-	fmt.Fprintf(w, "</p>
+	fmt.Fprintf(w, "</p>")
 		    
-	
 	fmt.Fprintf(w, "<H2>Brownfield API set for execution: ")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</H2>")
