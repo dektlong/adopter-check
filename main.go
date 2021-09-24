@@ -14,8 +14,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 
 	fmt.Fprintf(w, "hello dekt\n")
+	fmt.Fprintf(w, "url.string:\n")
 	fmt.Fprintf(w, r.URL.String())
-	fmt.Fprintf(w, os.Getenv("VAR"))
+	fmt.Fprintf(w, "revision:\n")
+	fmt.Fprintf(w, os.Getenv("REV"))
 }
 
 func main() {
