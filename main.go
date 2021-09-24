@@ -16,7 +16,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	apiCall = strings.ReplaceAll(r.URL.String(), "/api=", "")
+	url = r.URL.String()
+	
+	apiCall = strings.ReplaceAll(url, "/api=", "")
 
 	fmt.Fprintf(w, "<H1>")
 	fmt.Fprintf(w, "Adopter Check API landing page")
