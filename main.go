@@ -27,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, apiCall)
 	fmt.Fprintf(w, "\n")
 	
-	if (apiCall == "\") {
+	if (apiCall == "") {
         	res = "Please provide a valid API call"
     	} else {
         	req, _ := http.NewRequest("GET", apiCall, nil)
