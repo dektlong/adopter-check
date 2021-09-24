@@ -26,12 +26,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "\n")
 	
-	req, _ := http.NewRequest("GET", API_CALL, nil)
-	res, _ := http.DefaultClient.Do(req)
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
-	fmt.Fprintf(w, string(body))
-    	
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "\n")
