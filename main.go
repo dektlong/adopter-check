@@ -21,7 +21,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "\n")
 	fmt.Fprintf(w, "<H3>Function revision:")
 	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "<\H3>")
+	fmt.Fprintf(w, "</H3>")
 }
 
 func main() {
