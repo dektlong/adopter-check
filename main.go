@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var API_CALL="NONE"
+var API_CALL="brownfield.example.com/my-api"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -27,7 +27,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
     	log.Println(err.Error())
-		fmt.Fprintf(w,"Unable to exectute this API")
+		fmt.Fprintf(w,"Unable to run this API")
     } else {
 		responseData, err := ioutil.ReadAll(response.Body)
 		log.Println(string(responseData),err)
