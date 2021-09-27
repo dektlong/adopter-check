@@ -2,14 +2,14 @@ package main
 
 import (
 	"flag"
-//	"io/ioutil"
+	"io/ioutil"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
 )
 
-var API_CALL="NONE"
+var API_CALL="http://dekt4pets.tanzu.dekt.io/api/animals"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -17,29 +17,29 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<H1>Welcome to Adopter Check function</H1>")
 		    
-	fmt.Fprintf(w, "<H2>Running Brownfield API(s):</H2>")
+	fmt.Fprintf(w, "<H2>Running Brownfield API(s) ...</H2>")
 	
 	fmt.Fprintf(w, "<H3>")
 
 	fmt.Fprintf(w, "API:")
 	fmt.Fprintf(w, API_CALL)
-	fmt.Fprintf(w, "\nRespose:\n")
+	fmt.Fprintf(w, "<BR>")
 
-	//response, err := http.Get(API_CALL)
+	response, err := http.Get("http://dekt4pets.tanzu.dekt.io/api/animals")
 
-//    	if err != nil {
-  //      	log.Println(err.Error())
-    //    	os.Exit(1)
-    //	}
+	//if err != nil {
+    //log.Println(err.Error())
+	//	displayOutput := "Unable to execute this APIs"
+    //}
 
-    //responseData, err := ioutil.ReadAll(response.Body)
+    responseData, err := ioutil.ReadAll(response.Body)
 	
-    //	if err != nil {
-      //  	log.Fatal(err)
-		//	os.Exit(1)
-    	//}
+    //if err != nil {
+      	//log.Fatal(err)
+		//displayOutput := "Unable to execute this APIs"
+    //}
     	
-//	fmt.Fprintf(w,string(responseData))
+	fmt.Fprintf(w,string(responseData))
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "<H4>Function revision: ")
