@@ -25,21 +25,21 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "\nRespose:\n")
 
-	response, err := http.Get(API_CALL)
+	//response, err := http.Get(API_CALL)
 
-    	if err != nil {
-        	log.Println(err.Error())
-        	os.Exit(1)
-    	}
+//    	if err != nil {
+  //      	log.Println(err.Error())
+    //    	os.Exit(1)
+    //	}
 
-    responseData, err := ioutil.ReadAll(response.Body)
+    //responseData, err := ioutil.ReadAll(response.Body)
 	
-    	if err != nil {
-        	log.Fatal(err)
-			os.Exit(1)
-    	}
+    //	if err != nil {
+      //  	log.Fatal(err)
+		//	os.Exit(1)
+    	//}
     	
-	fmt.Fprintf(w,string(responseData))
+//	fmt.Fprintf(w,string(responseData))
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "<H4>Function revision: ")
