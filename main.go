@@ -29,20 +29,20 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
     	log.Println(err.Error())
-		displayOutput := "Unable to execute this APIs"
+		fmt.Fprintf(w,"Unable to exectute this API")
     }
 
     responseData, err := ioutil.ReadAll(response.Body)
 	
     if err != nil {
 		log.Println(err.Error())
-		displayOutput := "Unable to execute this APIs"
+		fmt.Fprintf(w,"Unable to exectute this API")
     } else {
-		displayOutput := string(responseData)
+		fmt.Fprintf(w,string(responseData))
 	}
 	
     	
-	fmt.Fprintf(w,displayOutput)
+	
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "<H4>Function revision: ")
