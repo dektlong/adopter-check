@@ -17,11 +17,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<H1>Welcome to Adopter Check function</H1>")
 		    
-	fmt.Fprintf(w, "<H2>Running Brownfield API(s) ...</H2>")
-	
-	fmt.Fprintf(w, "<H3>")
+	fmt.Fprintf(w, "<H2>")
 
-	fmt.Fprintf(w, "API: ")
+	fmt.Fprintf(w, "Brownfield API: ")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "<BR>Response:<BR>")
 
@@ -42,11 +40,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w,"Success")
 	}
 
-	fmt.Fprintf(w, "</H3>")
+	fmt.Fprintf(w, "</H2>")
 	
-	fmt.Fprintf(w, "<H4>Function revision: ")
+	fmt.Fprintf(w, "<H3>Function revision: ")
 	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "</H4>")
+	fmt.Fprintf(w, "</H3>")
 }
 
 
