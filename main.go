@@ -38,6 +38,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.Println(err.Error())
 		fmt.Fprintf(w,"Unable to exectute this API")
     } else {
+		log.Println(string(responseData))
 		fmt.Fprintf(w,"Success")
 	}
 
