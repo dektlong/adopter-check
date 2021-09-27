@@ -9,8 +9,7 @@ import (
 	"os"
 )
 
-//var API_CALL="brownfield.example.com/my-api"
-var API_CALL="http://datacheck.tanzu.dekt.io/api/adoption-history?adopterID=909-99-9999"
+var API_CALL="brownfield.example.com/my-api"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -22,7 +21,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "Brownfield API: ")
 	fmt.Fprintf(w, API_CALL)
-	fmt.Fprintf(w, "<BR>Response: ")
+	fmt.Fprintf(w, "<BR><BR>Response: ")
 
 	response, err := http.Get(API_CALL)
 
