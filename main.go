@@ -24,13 +24,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<BR>Response: ")
 
 	response, err := http.Get(API_CALL)
-	//responseData, err := ioutil.ReadAll(response.Body)
 
 	if err != nil {
     	log.Println(err.Error())
 		fmt.Fprintf(w,"Unable to exectute this API")
     } else {
-		//log.Println(string(responseData))
+		responseData, err := ioutil.ReadAll(response.Body)
+		log.Println(string(responseData),err)
 		fmt.Fprintf(w,"Success")
 	}
 	fmt.Fprintf(w, "</H2>")
