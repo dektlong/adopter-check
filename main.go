@@ -17,34 +17,34 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<H1>Welcome to Adopter Check function</H1>")
 		    
-	fmt.Fprintf(w, "<H2>Brownfield API: ")
-	fmt.Fprintf(w, API_CALL)
-
-	executeAPI (API_CALL)
-
-	fmt.Fprintf(w, "</H2>")
+	fmt.Fprintf(w, "<H2>Running Brownfield API(s):</H2>")
 	
-	fmt.Fprintf(w, "<H3>Function revision: ")
-	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "</H3>")
-}
+	fmt.Fprintf(w, "<H3>")
 
-func executeAPI (string apiCall) {
-	response, err := http.Get(apiCall)
+	fmt.Fprintf(w, "API:")
+	fmt.Fprintf(w, API_CALL)
+	fmt.Fprintf(w, "\nRespose:\n")
+
+	response, err := http.Get(API_CALL)
 
     	if err != nil {
         	log.Println(err.Error())
         	os.Exit(1)
     	}
 
-    	responseData, err := ioutil.ReadAll(response.Body)
+    responseData, err := ioutil.ReadAll(response.Body)
 	
     	if err != nil {
         	log.Fatal(err)
-		os.Exit(1)
+			os.Exit(1)
     	}
     	
 	fmt.Fprintf(w,string(responseData))
+	fmt.Fprintf(w, "</H3>")
+	
+	fmt.Fprintf(w, "<H4>Function revision: ")
+	fmt.Fprintf(w, os.Getenv("REV"))
+	fmt.Fprintf(w, "</H4>")
 }
 
 
