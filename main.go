@@ -27,19 +27,22 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	response, err := http.Get("http://dekt4pets.tanzu.dekt.io/api/animals")
 
-	//if err != nil {
-    //log.Println(err.Error())
-	//	displayOutput := "Unable to execute this APIs"
-    //}
+	if err != nil {
+    	log.Println(err.Error())
+		displayOutput := "Unable to execute this APIs"
+    }
 
     responseData, err := ioutil.ReadAll(response.Body)
 	
-    //if err != nil {
-      	//log.Fatal(err)
-		//displayOutput := "Unable to execute this APIs"
-    //}
+    if err != nil {
+		log.Println(err.Error())
+		displayOutput := "Unable to execute this APIs"
+    } else {
+		displayOutput := string(responseData)
+	}
+	
     	
-	fmt.Fprintf(w,string(responseData))
+	fmt.Fprintf(w,displayOutput)
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "<H4>Function revision: ")
