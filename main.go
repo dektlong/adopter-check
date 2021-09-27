@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var API_CALL="http://datacheck.tanzu.dekt.io/api/adoption-history?adopterID=909-99-9999"
+var API_CALL="NONE"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -38,11 +38,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.Println(err.Error())
 		fmt.Fprintf(w,"Unable to exectute this API")
     } else {
-		fmt.Fprintf(w,string(responseData))
+		fmt.Fprintf(w,"Success")
 	}
-	
-    	
-	
+
 	fmt.Fprintf(w, "</H3>")
 	
 	fmt.Fprintf(w, "<H4>Function revision: ")
