@@ -21,10 +21,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<H3>")
 
-	fmt.Fprintf(w, "API: ", API_CALL)
+	fmt.Fprintf(w, "API: ")
+	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "<BR>Response:<BR>")
 
-	response, err := http.Get("http://dekt4pets.tanzu.dekt.io/api/animals")
+	response, err := http.Get(API_CALL)
 
 	if err != nil {
     	log.Println(err.Error())
