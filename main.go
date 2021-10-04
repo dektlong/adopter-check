@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var API_CALL="https://brownfieldapi.example.com/my-sample-api"
+var API_CALL="change"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
