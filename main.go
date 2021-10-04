@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var API_CALL="https://brownfieldapi.example.com/my-sample-api"
+var API_CALL="http://datacheck.tanzu.dekt.io/api/adoption-history?adopterID=909-99-9999"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
