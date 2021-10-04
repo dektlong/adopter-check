@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-var API_CALL="change"
+var API_CALL="me"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
