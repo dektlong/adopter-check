@@ -20,7 +20,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<H2>")
 
 	fmt.Fprintf(w, "Brownfield API: ")
-	fmt.Fprintf(w, API_CALL)
+	fmt.Fprintf(w, os.Getenv("BROWNFIELD_API")))
 	fmt.Fprintf(w, "<BR><BR>Response: ")
 
 	response, err := http.Get(API_CALL)
@@ -34,10 +34,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w,"Success")
 	}
 	fmt.Fprintf(w, "</H2>")
-	
-	fmt.Fprintf(w, "<H3>Function revision: ")
-	fmt.Fprintf(w, os.Getenv("REV"))
-	fmt.Fprintf(w, "</H3>")
 }
 
 
