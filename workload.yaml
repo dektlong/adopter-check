@@ -1,0 +1,16 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: adopter-check
+  labels:
+    app.kubernetes.io/name: adopter-check
+    app.tanzu.vmware.com/workload-type: web
+spec:
+  source:
+    git:
+      url: https://github.com/dektlong/adopter-check
+      ref:
+        branch: main
+  env:
+  - name: TESTVAR
+    value: aoeu
