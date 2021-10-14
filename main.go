@@ -8,23 +8,21 @@ import (
 	"net/http"
 )
 
-var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history?adopterID=99-999-9999"
-
-//https://brownfieldapi.example.com/my-brownfield-api
+var API_CALL="https://brownfieldapi.example.com/my-brownfield-api"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
+	fmt.Fprintf(w, "<H1><font color='gray'>Welcome to Adopter Check function</font></H1>")
 	
-	fmt.Fprintf(w, "<H2><font color='navy'>Brownfield API: </font>")
+	fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
 	
 	fmt.Fprintf(w, "<font color='maroon'>")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</font>")
 	
-	fmt.Fprintf(w, "<BR><BR><font color='navy'>Response: </font>")
+	fmt.Fprintf(w, "<BR><BR><font color='gray'>Response: </font>")
 
 	response, err := http.Get(API_CALL)
 
