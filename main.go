@@ -16,13 +16,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1><font color="Teal">")
+	fmt.Fprintf(w, "<H1><font color='teal'>")
 	fmt.Fprintf(w, "Welcome to Adopter Check function")
 	fmt.Fprintf(w, "</font></H1>")
 	
 	fmt.Fprintf(w, "<H2>")
 	fmt.Fprintf(w, "Brownfield API: ")
-	fmt.Fprintf(w, "<H1><font color="Blue">")
+	fmt.Fprintf(w, "<H1><font color='blue'>")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</font>")
 	fmt.Fprintf(w, "<BR><BR>Response: ")
@@ -31,16 +31,16 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
     		log.Println(err.Error())
-		fmt.Fprintf(w, "<H1><font color="Red">")
+		fmt.Fprintf(w, "<H1><font color='red'>")
 		fmt.Fprintf(w,"Adoption Denied")
 		fmt.Fprintf(w, "</font>")
 		
     } else {
 		responseData, err := ioutil.ReadAll(response.Body)
 		log.Println(string(responseData),err)
-		fmt.Fprintf(w, "<H1><font color="Red">")
+		fmt.Fprintf(w, "<H1><font color='green'>")
 		fmt.Fprintf(w,"Adoption Approved. Get ready to meet your new best friend.")
-		fmt.Fprintf(w, "</Green>")
+		fmt.Fprintf(w, "</font>")
 	}
 	fmt.Fprintf(w, "</H2>")
 }
