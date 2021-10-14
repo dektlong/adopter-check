@@ -16,16 +16,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1><font color='teal'>")
-	fmt.Fprintf(w, "Welcome to Adopter Check function")
-	fmt.Fprintf(w, "</font></H1>")
+	fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
 	
-	fmt.Fprintf(w, "<H2>")
-	fmt.Fprintf(w, "Brownfield API: ")
-	fmt.Fprintf(w, "<font color='blue'>")
+	fmt.Fprintf(w, "<H2><font color='navy'>Brownfield API: </font>")
+	
+	fmt.Fprintf(w, "<font color='maroon'>")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</font>")
-	fmt.Fprintf(w, "<BR><BR>Response: ")
+	
+	fmt.Fprintf(w, "<BR><BR><font color='navy'>Response: </font>")
 
 	response, err := http.Get(API_CALL)
 
