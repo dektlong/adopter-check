@@ -8,7 +8,8 @@ import (
 	"net/http"
 )
 
-var API_CALL="https://brownfieldapi.example.com/my-brownfield-api"
+var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history?adopterID=99-999-9999"
+//https://brownfieldapi.example.com/my-brownfield-api
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
