@@ -14,7 +14,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1><font color='gray'>Welcome to Adopter Check function</font></H1>")
+	fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
 	
 	fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
 	
