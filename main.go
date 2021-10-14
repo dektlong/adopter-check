@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 )
 
 var API_CALL="https://brownfieldapi.example.com/my-brownfield-api"
