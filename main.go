@@ -20,18 +20,18 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<H2>")
 
 	fmt.Fprintf(w, "Brownfield API: ")
-	fmt.Fprintf(w, os.Getenv("BROWNFIELD_API")))
+	fmt.Fprintf(w, os.Getenv("BROWNFIELD_API"))
 	fmt.Fprintf(w, "<BR><BR>Response: ")
 
 	response, err := http.Get(API_CALL)
 
 	if err != nil {
     	log.Println(err.Error())
-		fmt.Fprintf(w,"Unable to run this API")
+		fmt.Fprintf(w,"Adoption Denied")
     } else {
 		responseData, err := ioutil.ReadAll(response.Body)
 		log.Println(string(responseData),err)
-		fmt.Fprintf(w,"Success")
+		fmt.Fprintf(w,"Adoption Approved. Get ready to meet your new best friend.")
 	}
 	fmt.Fprintf(w, "</H2>")
 }
