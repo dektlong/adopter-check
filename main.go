@@ -30,7 +30,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
     		log.Println(err.Error())
 		fmt.Fprintf(w, "<font color='red'>")
 		fmt.Fprintf(w,"Adoption Denied")
-		fmt.Fprintf(w, "</font>)
+		fmt.Fprintf(w, "</font>")
 		fmt.Fprintf(w, "<img src='https://cdn.pixabay.com/photo/2017/03/14/19/06/bulldog-2144110_960_720.jpg alt=''>")
 		
     } else {
