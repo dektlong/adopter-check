@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-var API_CALL="brownfield.example.com/api"
+var API_CALL="brownfield.example.com/api/run-me"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
