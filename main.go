@@ -31,7 +31,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<font color='red'>")
 		fmt.Fprintf(w,"Adoption Denied")
 		fmt.Fprintf(w, "</font></H2>")
-		fmt.Fprintf(w, "<BR><img src='https://github.com/dektlong/adopter-check/blob/main/sad-dog.jpg'>")
+		fmt.Fprintf(w, "<BR><img src='https://cdn.pixabay.com/photo/2017/03/14/19/06/bulldog-2144110_960_720.jpg>")
 		
     } else {
 		responseData, err := ioutil.ReadAll(response.Body)
