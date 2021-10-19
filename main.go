@@ -30,7 +30,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
     		log.Println(err.Error())
 		fmt.Fprintf(w, "<font color='red'>")
 		fmt.Fprintf(w,"Adoption Denied")
-		fmt.Fprintf(w, "</font>")
+		fmt.Fprintf(w, "</font></H2>")
 		fmt.Fprintf(w, "<BR><img src='https://github.com/dektlong/adopter-check/blob/main/sad-dog.jpg'>")
 		
     } else {
@@ -38,10 +38,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.Println(string(responseData),err)
 		fmt.Fprintf(w, "<font color='green'>")
 		fmt.Fprintf(w,"Adoption Approved. Get ready to meet your new best friend.")
-		fmt.Fprintf(w, "</font>")
+		fmt.Fprintf(w, "</font></H2>")
 		fmt.Fprintf(w, "<BR><img src='https://github.com/dektlong/adopter-check/blob/main/happy-dog.jpg'>")
 	}
-	fmt.Fprintf(w, "</H2>")
 }
 
 
