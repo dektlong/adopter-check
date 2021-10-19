@@ -31,7 +31,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<font color='red'>")
 		fmt.Fprintf(w,"Adoption Denied")
 		fmt.Fprintf(w, "</font>")
-		fmt.Fprintf(w, "<img src='https://cdn.pixabay.com/photo/2017/03/14/19/06/bulldog-2144110_960_720.jpg alt=''>")
+		fmt.Fprintf(w, "<BR><BR><img src='https://raw.githubusercontent.com/dektlong/adopter-check/main/sad-dog.jpg' alt=''>")
 		
     } else {
 		responseData, err := ioutil.ReadAll(response.Body)
@@ -39,7 +39,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<font color='green'>")
 		fmt.Fprintf(w,"Adoption Approved. Get ready to meet your new best friend.")
 		fmt.Fprintf(w, "</font>")
-		fmt.Fprintf(w, "<BR><img src='https://github.com/dektlong/adopter-check/blob/main/happy-dog.jpg'>")
+		fmt.Fprintf(w, "<BR><BR><img src='https://raw.githubusercontent.com/dektlong/adopter-check/main/happy-dog.jpg' alt=''>")
 	}
 	fmt.Fprintf(w, "</H2>")
 }
