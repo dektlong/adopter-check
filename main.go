@@ -28,7 +28,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	
 	fmt.Fprintf(w, "<BR><BR><font color='gray'>Response: </font>")
 
-	response, err := http.Get(API_CALL)
+	//response, err := http.Get(API_CALL)
 
 	//if err != nil {
 	if DEVX_MOOD == "SAD" {
