@@ -8,15 +8,22 @@ import (
 	"net/http"
 )
 
-var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history/99-999-9999"
+// var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history/99-999-9999"
+var DEVX_MOOD="SAD"
+// var DEVX_MOOD="HAPPY"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
-	fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
+	// fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
+
+fmt.Fprintf(w, "<H1><font color='navy'>Welcome to DevX on K8s mood function</font></H1>")
+
+
 	
-	fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
+
+fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
 	
 	fmt.Fprintf(w, "<font color='maroon'>")
 	fmt.Fprintf(w, API_CALL)
