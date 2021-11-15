@@ -17,14 +17,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
 	// fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
+        fmt.Fprintf(w, "<H1><font color='navy'>Welcome to DevX on K8s mood function</font></H1>")
 
-fmt.Fprintf(w, "<H1><font color='navy'>Welcome to DevX on K8s mood function</font></H1>")
-
-
-	
-
-fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
-	
+        // fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
+	fmt.Fprintf(w, "<H2><font color='gray'>What is your DevX on K8s mood?</font>")
 	fmt.Fprintf(w, "<font color='maroon'>")
 	fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</font>")
