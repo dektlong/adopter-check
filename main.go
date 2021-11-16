@@ -10,8 +10,8 @@ import (
 
 //var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history/99-999-9999"
 
-var DEVX_MOOD="SAD"
-//var DEVX_MOOD="HAPPY"
+//var DEVX_MOOD="SAD"
+var DEVX_MOOD="HAPPY"
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
