@@ -10,7 +10,7 @@ import (
 
 //var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history/99-999-9999"
 
-IS_HAPPY:= false
+var IS_HAPPY = false
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
