@@ -17,10 +17,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	log.Println(r.RemoteAddr, r.Method, r.URL.String())
 	
 	//fmt.Fprintf(w, "<H1><font color='navy'>Welcome to Adopter Check function</font></H1>")
-        fmt.Fprintf(w, "<H1><font color='navy'>Welcome to DevX on K8s mood function</font></H1>")
+        fmt.Fprintf(w, "<H1><font color='navy'>Welcome to DevX on K8s demo</font></H1>")
 
         //fmt.Fprintf(w, "<H2><font color='gray'>Brownfield API: </font>")
-	fmt.Fprintf(w, "<H2><font color='gray'>What is your DevX mood today?</font>")
+	fmt.Fprintf(w, "<H2><font color='gray'>What is your mood today?</font>")
 	//fmt.Fprintf(w, "<font color='maroon'>")
 	//fmt.Fprintf(w, API_CALL)
 	fmt.Fprintf(w, "</font><BR><BR>")
@@ -34,7 +34,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
     		//log.Println(err.Error())
 		fmt.Fprintf(w, "<font color='red'>")
 		//fmt.Fprintf(w,"Adoption Denied")
-		fmt.Fprintf(w,"Your current mood is sad. I hope you have a better day.")
+		fmt.Fprintf(w,"Your current mood is sad. We hope you have a better day.")
 		fmt.Fprintf(w, "</font>")
 		fmt.Fprintf(w, "<BR><BR><img src='https://raw.githubusercontent.com/dektlong/adopter-check/main/sad-dog.jpg' alt=''>")
 		
