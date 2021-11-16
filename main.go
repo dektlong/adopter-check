@@ -10,8 +10,7 @@ import (
 
 //var API_CALL="http://datacheck.apps.dekt.io/api/adoption-history/99-999-9999"
 
-//var DEVX_MOOD="SAD"
-var DEVX_MOOD="HAPPY"
+IS_HAPPY:= false
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	
@@ -31,7 +30,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	//response, err := http.Get(API_CALL)
 
 	//if err != nil {
-	if DEVX_MOOD == "SAD" {
+	if IS_HAPPY == false {
     		//log.Println(err.Error())
 		fmt.Fprintf(w, "<font color='red'>")
 		//fmt.Fprintf(w,"Adoption Denied")
