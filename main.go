@@ -32,7 +32,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	//if err != nil {
 	if DEVX_MOOD == "SAD" {
-    		log.Println(err.Error())
+    		//log.Println(err.Error())
 		fmt.Fprintf(w, "<font color='red'>")
 		//fmt.Fprintf(w,"Adoption Denied")
 		fmt.Fprintf(w,"Your current mood is sad. I hope you have a better day ahead.")
@@ -40,8 +40,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<BR><BR><img src='https://raw.githubusercontent.com/dektlong/adopter-check/main/sad-dog.jpg' alt=''>")
 		
     } else {
-		responseData, err := ioutil.ReadAll(response.Body)
-		log.Println(string(responseData),err)
+		//responseData, err := ioutil.ReadAll(response.Body)
+		//log.Println(string(responseData),err)
 		fmt.Fprintf(w, "<font color='green'>")
 		//fmt.Fprintf(w,"Adoption Approved. Get ready to meet your new best friend.")
 		fmt.Fprintf(w,"Your current mood is happy. Have an awsome rest of your day!")
