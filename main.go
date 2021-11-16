@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"io/ioutil"
+	//"io/ioutil"
 	"fmt"
 	"log"
 	"net/http"
